@@ -35,7 +35,11 @@ type AssetListProps = {
   dataTestId: string;
 };
 
-export const AssetList = ({ assetList, currentAsset, dataTestId }: AssetListProps) => {
+export const AssetList = ({
+  assetList,
+  currentAsset,
+  dataTestId,
+}: AssetListProps) => {
   return (
     <AssetListContainer data-testid={dataTestId}>
       {assetList.map((asset) => {

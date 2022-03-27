@@ -166,11 +166,15 @@ const getFormattedMetrics = (assetMetrics: AssetMetrics): FormattedMetrics => {
     },
     {
       name: "Marketcap (USD)",
-      value: formatNumber({ raw: currentMarketcapUsd, prefix: '$', decimals: 2 }),
+      value: formatNumber({
+        raw: currentMarketcapUsd,
+        prefix: "$",
+        decimals: 2,
+      }),
     },
     {
       name: "2050 marketcap (USD)",
-      value: formatNumber({ raw: y2050MarketcapUsd, prefix: '$', decimals: 2 }),
+      value: formatNumber({ raw: y2050MarketcapUsd, prefix: "$", decimals: 2 }),
     },
     {
       name: "2050 issuance (percent)",

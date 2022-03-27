@@ -29,9 +29,9 @@ const END_DATE = "2022-03-25";
 
 const useIsMounted = () => {
   const isMounted = useRef(false);
-  useEffect((): () => void => {
+  useEffect((): (() => void) => {
     isMounted.current = true;
-    return () => isMounted.current = false;
+    return () => (isMounted.current = false);
   }, []);
   return isMounted;
 };
@@ -103,11 +103,15 @@ const App = () => {
   return (
     <AppContainer>
       <TopContainer>
-        <AssetList assetList={assetList} currentAsset={currentAsset} dataTestId={'asset-list'} />
-        <Chart assetTimeSeries={assetTimeSeries} dataTestId={'chart'} />
+        <AssetList
+          assetList={assetList}
+          currentAsset={currentAsset}
+          dataTestId={"asset-list"}
+        />
+        <Chart assetTimeSeries={assetTimeSeries} dataTestId={"chart"} />
       </TopContainer>
-      <MetricsHeader data-testid={'metrics-header'}>{assetName}</MetricsHeader>
-      <Metrics assetMetrics={assetMetrics} dataTestId={'metrics'} />
+      <MetricsHeader data-testid={"metrics-header"}>{assetName}</MetricsHeader>
+      <Metrics assetMetrics={assetMetrics} dataTestId={"metrics"} />
     </AppContainer>
   );
 };
